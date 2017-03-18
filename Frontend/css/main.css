@@ -4,6 +4,13 @@
         color: #eee;
         text-align: center;
     }
+    .design:hover{
+        background: 
+                    #6190E8; /* fallback for old browsers */
+				background: -webkit-linear-gradient(to left, #6190E8 , #A7BFE8); /* Chrome 10-25, Safari 5.1-6 */
+				background: linear-gradient(to left, #6190E8 , #A7BFE8); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+				        ;
+    }
     
     a {
         color: #ccc;
@@ -23,6 +30,17 @@
     .cf{
       zoom:1;
     }
+    .project{
+	text-align: center;
+	font-family: lato;
+	font-size: 3em;
+        
+    }
+    .fcc{
+            color: #0575E6;
+        
+    }
+    
 
     /*-------------------------------------*/	
     
