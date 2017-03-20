@@ -18,9 +18,13 @@
 	
 	<!--CSS-->
 
+	<!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!--custom css-->
 	 <link href="css/main.css" rel="stylesheet">
    		
-	
+	<!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 	<!--Google Fonts-->
 	<link href='http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
 	<link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,900' rel='stylesheet' type='text/css'>
@@ -50,17 +54,50 @@
         <li class="design"><a href="#">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="design"><a href="#">Hospital<i class="fa fa-plus-square" aria-hidden="true"></i></a></li>
+        <li class="design"><a href="hospitalSignUp.html">Hospital<i class="fa fa-plus-square" aria-hidden="true"></i></a></li>
         <li class="design"><a href="#">Patient<i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
+        <li class="design"><a href="#">Doctor<i class="fa fa-user-plus" aria-hidden="true"></i></a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 <h1>Hospital.ng</h1>
-<form class="form-wrapper cf">
-  	<input type="text" placeholder="Hospital or location here..." required>
-	  <button type="submit">Search</button>
-</form>
+
+<!-- search bar-->
+<div class="container">
+    <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+		    <div class="input-group">
+                <div class="input-group-btn search-panel">
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+                    	<select class="selectpicker">
+							  <option>Filter by</option>
+							  <option>City</option>
+							  <option>Services</option>
+							  <option>Proximity</option>
+						</select>
+
+                    	<!-- span id="search_concept">Filter by</span> <span class="caret"></span>
+	                    	<ul class="dropdown-menu" role="menu">
+		                      <li><a href="#contains">Contains</a></li>
+		                      <li><a href="#its_equal">It's equal</a></li>
+		                      <li><a href="#greather_than">Greather than</a></li>
+		                      <li><a href="#less_than">Less than </a></li>
+		                      <li class="divider"></li>
+		                      <li><a href="#all">Anything</a></li>
+	                    	</ul> -->
+                    </button>
+                    
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control renew" name="x" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+	</div>
+</div>
 <footer class="project">
     <p>this is a<span class="fcc"><i class="fa fa-free-code-camp" aria-hidden="true"></i></span> Abuja project...</p>
 </footer>
