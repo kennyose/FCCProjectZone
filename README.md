@@ -20,6 +20,8 @@ Open a new terminal/bash and run the following commands:
 
 `node app.js` or `npm start` to start server
 
+Frontend HTML, CSS and Javascript assets are located in the `Frontend` folder. Latest updates will be found there.
+
 
 
 Open your browser to http://localhost:3000 to view the homepage => '/' > 
