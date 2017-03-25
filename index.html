@@ -20,11 +20,12 @@
 
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!--custom css-->
     <link href="css/main.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="font-awesome/css/font-awesome.min.css" rel= type="text/css">
     <!--Google Fonts-->
     <link href='http://fonts.googleapis.com/css?family=Lato:400,300,400italic,700,700italic,900' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,400italic,500,500italic,700,900' rel='stylesheet' type='text/css'>
@@ -68,46 +69,26 @@
     </nav>
     <h1>Hospital.ng</h1>
 
-    <!-- search bar-->
-    <div class="container">
-        <div class="row">
-            <div class="col-xs-8 col-xs-offset-2">
-                <div class="input-group">
-                    <div class="input-group-btn search-panel">
-                        <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    	<select class="selectpicker">
-							  <option>Filter by</option>
-							  <option>City</option>
-							  <option>Services</option>
-							  <option>Proximity</option>
-						</select>
+   
+<!--search bar-->
 
-                    	<!-- span id="search_concept">Filter by</span> <span class="caret"></span>
-	                    	<ul class="dropdown-menu" role="menu">
-		                      <li><a href="#contains">Contains</a></li>
-		                      <li><a href="#its_equal">It's equal</a></li>
-		                      <li><a href="#greather_than">Greather than</a></li>
-		                      <li><a href="#less_than">Less than </a></li>
-		                      <li class="divider"></li>
-		                      <li><a href="#all">Anything</a></li>
-	                    	</ul> -->
-                    </button>
+<div class="container align-middle">
+    <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+                <div class="input-group-btn search-panel">
+                
 
-                    </div>
-                    <input type="hidden" name="search_param" value="all" id="search_param">
-                    <input type="text" class="form-control renew" name="x" placeholder="Search term...">
-                    <span id="search_concept">Filter by</span> <span class="caret"></span>
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">filter by
+                        <select class="selectpicker">
+                              <option>Hospitals</option>
+                              <option>Laboratories</option>
+                              <option>Clinics</option>
+                              <option>Pharmacies</option>
+                        </select>
                     </button>
-                    <ul class="dropdown-menu" role="menu">
-                        <li><a href="#contains">Contains</a></li>
-                        <li><a href="#its_equal">Is equal</a></li>
-                        <li><a href="#greather_than">Greather than</a></li>
-                        <li><a href="#less_than">Less than </a></li>
-                        <li class="divider"></li>
-                        <li><a href="#all">Anything</a></li>
-                    </ul>
                 </div>
-                <input type="hidden" name="search_param" value="all" id="search_param">
+                <input type="hidden" name="search_param" value="all" id="search_param">         
                 <input type="text" class="form-control" name="x" placeholder="Search term...">
                 <span class="input-group-btn">
                     <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
@@ -115,10 +96,13 @@
             </div>
         </div>
     </div>
-    </div>
+</div>
+        <!--search bar ends here-->
+
     <footer class="project">
         <p>this is a <span class="fcc"><i class="fa fa-free-code-camp" aria-hidden="true"></i></span> Abuja project...</p>
     </footer>
+<script type="text/javascript" href="js/custom.js"></script>
 </body>
 
 </html>
