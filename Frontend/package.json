@@ -1,0 +1,23 @@
+{
+  "name": "fccprojectzone",
+  "version": "1.0.0",
+  "description": "Abuja FreeCodeCamp Group Project",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flyg101/FCCProjectZone.git"
+  },
+  "author": "FCC Abuja",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flyg101/FCCProjectZone/issues"
+  },
+  "homepage": "https://github.com/flyg101/FCCProjectZone#readme",
+  "dependencies": {
+    "ejs": "^2.5.6",
+    "express": "^4.15.2"
+  }
+}

@@ -1,0 +1,27 @@
+body{
+	font-family: Macondo;
+	background: url("images/hospital image4.jpg");
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+.container{
+	margin-top: 50px;
+}
+
+
+#change {
+	color: #333;
+    background-color: #31b0d5;
+    /*border-color:*/ 
+}
+
+    
+#sign_in{
+	color: black;
+}
+
+#project_logo{
+	color:#cb42f4;
+	margin-top: 50%;
+	align-items: right;
+}
