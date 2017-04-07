@@ -1,5 +1,7 @@
 
 
+
+
 /* REGISTER CSS FILE */
 
 #registerbody{
@@ -530,14 +532,16 @@ form[role=login] {
         left: 50%;
         margin-left: -25px;
     }
-=======
->>>>>>> 9c0ab65d48098adcdeb25fdd109ada3cc9b14aa0
+
 
 
 /* HOSPITAL CSS FILE */
+
 .thumbnail img {
     width: 100%;
 }
+
+
 
 .thumbnail {
     padding: 0;

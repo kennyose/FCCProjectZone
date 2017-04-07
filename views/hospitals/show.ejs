@@ -1,5 +1,5 @@
 <% include ../partials/header %>
-<div class="container">
+<div class="container" id="blue">
     <div class="row">
         <div class="col-md-3">
             <p class="lead">Hospitals.ng</p>
@@ -11,7 +11,7 @@
         </div>
         <div class="col-md-9">
             <div class="thumbnail">
-                <img class="img-responsive" src="<%= hospital.image %>">
+                <img class="img-responsive" src="<%= hospital.image %>" style="width:100%">
                 <div class="caption-full">
                     <h4 class="pull-right">N1000.00/hour</h4>
                     <h4><a><%=hospital.name%></a></h4>
@@ -19,10 +19,12 @@
                     <p>
                         <em>Submitted By <%= hospital.author.username %></em>
                     </p>
+
                     <% if(currentUser && hospital.author.id.equals(currentUser._id)){ %>
                         <a class="btn btn-xs btn-warning" href="/hospitals/<%= hospital._id %>/edit">Edit</a>
-                        <form id="delete-form" action="/hospitals/<%= hospital._id %>?_method=DELETE" method="POST">
-                            <button class="btn btn-xs btn-danger">Delete</button>
+                       
+                        <form style="display:inline" action="/hospitals/<%= hospital._id %>?_method=DELETE" method="POST">
+                            <button class="btn btn-xs btn-danger"  >Delete</button>
                         </form>
                     <% }%>
                 </div>
@@ -43,7 +45,7 @@
                         <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
                             <a class="btn btn-xs btn-warning" 
                                href="/hospitals/<%=hospital._id %>/comments/<%=comment._id %>/edit">Edit</a>
-                            <form id="delete-form" action="/hospitals/<%=hospital._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
+                            <form style="display:inline" id="delete-form" action="/hospitals/<%=hospital._id %>/comments/<%=comment._id %>?_method=DELETE" method="POST">
                                 <input type="submit" class="btn btn-xs btn-danger" value="Delete">
                             </form>
                         <% } %>
