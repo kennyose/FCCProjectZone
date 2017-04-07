@@ -78,7 +78,7 @@ app.use("/hospitals/:id/comments", commentRoutes);
 
 
 //Setup the port for the server to listen on ==> port 3000
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 // Start the server, listening on port = PORT
 app.listen(PORT, function() {
