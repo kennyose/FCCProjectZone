@@ -36,10 +36,10 @@ var commentRoutes    = require("./routes/comments"),
 //Connecting to Database
 
 //1 This will connect locally to your system
-mongoose.connect("mongodb://127.0.0.1/hospitaldata");
+//mongoose.connect("mongodb://127.0.0.1/hospitaldata");
 
 //2 This will connect the database to the cloud(www.mlab.com)
-//mongoose.connect("mongodb://hospital:hospital@ds155160.mlab.com:55160/hospitaldata");
+mongoose.connect("mongodb://hospital:hospital@ds155160.mlab.com:55160/hospitaldata");
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
