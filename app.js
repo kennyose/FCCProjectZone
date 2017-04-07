@@ -12,11 +12,11 @@ var express     = require("express"),
     methodOverride = require("method-override")
     Hospital  = require("./models/hospital"),
     Comment     = require("./models/comment"),
-    User        = require("./models/user"),
-    seedDB      = require("./seeds")
+    User        = require("./models/user")
+   
 
 // Express is initialized as app so all the app() functions are available for use
-  var app   = express();
+var app   = express();
 
 
 // Phase Json object into node
@@ -34,24 +34,46 @@ var commentRoutes    = require("./routes/comments"),
     indexRoutes      = require("./routes/index")
 
 //Connecting to Database
-//mongoose.connect("mongodb://127.0.0.1/fccprojectzone");
-var url = "mongodb://127.0.0.1/fccprojectzone"
-mongoose.connect(url);
+
+//1 This will connect locally to your system
+//mongoose.connect("mongodb://127.0.0.1/hospitaldata");
+
+//2 This will connect the database to the cloud(www.mlab.com)
+mongoose.connect("mongodb://hospital:hospital@ds155160.mlab.com:55160/hospitaldata");
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
+app.use(flash());
 
 
-app.get("/", function(req, res){
-    res.render("index");
+
+// PASSPORT CONFIGURATION
+app.use(require("express-session")({
+    secret: "Once again Rusty wins cutest dog!",
+    resave: false,
+    saveUninitialized: false
+}));
+app.use(passport.initialize());
+app.use(passport.session());
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
+app.use(function(req, res, next){
+   res.locals.currentUser = req.user;
+   res.locals.error = req.flash("error");
+   res.locals.success = req.flash("success");
+   next();
 });
 
 
-app.get('/register', function(req, res) {
-    res.render('register');
-})
 
-app.get('/login', function(req, res) {
-    res.render('login');
-})
-
+// Start Calling API
+app.use("/", indexRoutes);
+app.use("/hospitals", hospitalRoutes);
+app.use("/hospitals/:id/comments", commentRoutes);
 
 
 

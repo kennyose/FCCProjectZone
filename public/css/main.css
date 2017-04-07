@@ -10,7 +10,7 @@
 }
 
 .container{
-	margin-top: 50px;
+	margin-top: 2px;
     
 }
 
@@ -533,3 +533,20 @@ form[role=login] {
 =======
 >>>>>>> 9c0ab65d48098adcdeb25fdd109ada3cc9b14aa0
 
+
+/* HOSPITAL CSS FILE */
+.thumbnail img {
+    width: 100%;
+}
+
+.thumbnail {
+    padding: 0;
+}
+
+.thumbnail .caption-full {
+    padding: 9px;
+}
+
+#delete-form {
+    display: inline;
+}
