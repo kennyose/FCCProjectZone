@@ -4,19 +4,19 @@
 // Express will be our server framework so we import (require) it as a first dependency
 
 var express     = require("express"),
-    app         = express(),
     bodyParser  = require("body-parser"),
     mongoose    = require("mongoose"),
     flash       = require("connect-flash"),
     passport    = require("passport"),
     LocalStrategy = require("passport-local"),
     methodOverride = require("method-override")
-    //Campground  = require("./models/campground"),
-    //Comment     = require("./models/comment"),
-    //User        = require("./models/user"),
-    //seedDB      = require("./seeds")
+    Hospital  = require("./models/hospital"),
+    Comment     = require("./models/comment"),
+    User        = require("./models/user"),
+    seedDB      = require("./seeds")
 
-// Now we initialize express as our server app
+// Express is initialized as app so all the app() functions are available for use
+  var app   = express();
 
 
 // Phase Json object into node
@@ -28,15 +28,16 @@ app.use(express.static(__dirname + "/public"));
 app.use(methodOverride("_method"));
 app.use(flash());
 
-/**
- *  Express is initialized as app so all the app() functions are available for use
- */
+//requiring routes
+var commentRoutes    = require("./routes/comments"),
+    hospitalRoutes = require("./routes/hospitals"),
+    indexRoutes      = require("./routes/index")
 
-// The server can accept requests and send responses on specific links/endpoints
+//Connecting to Database
+//mongoose.connect("mongodb://127.0.0.1/fccprojectzone");
+var url = "mongodb://127.0.0.1/fccprojectzone"
+mongoose.connect(url);
 
-//Example:
-
-// When a user visits the homepage send the Welcome Text
 
 app.get("/", function(req, res){
     res.render("index");
@@ -47,9 +48,11 @@ app.get('/register', function(req, res) {
     res.render('register');
 })
 
-app.get('/signin', function(req, res) {
-    res.render('signin');
+app.get('/login', function(req, res) {
+    res.render('login');
 })
+
+
 
 
 //Setup the port for the server to listen on ==> port 3000
