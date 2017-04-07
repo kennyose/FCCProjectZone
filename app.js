@@ -3,12 +3,30 @@
 
 // Express will be our server framework so we import (require) it as a first dependency
 
-var express = require('express');
+var express     = require("express"),
+    app         = express(),
+    bodyParser  = require("body-parser"),
+    mongoose    = require("mongoose"),
+    flash       = require("connect-flash"),
+    passport    = require("passport"),
+    LocalStrategy = require("passport-local"),
+    methodOverride = require("method-override")
+    //Campground  = require("./models/campground"),
+    //Comment     = require("./models/comment"),
+    //User        = require("./models/user"),
+    //seedDB      = require("./seeds")
 
 // Now we initialize express as our server app
 
-var app = express();
 
+// Phase Json object into node
+app.use(bodyParser.urlencoded({extended: true}));
+
+// Set Default Engine
+app.set("view engine", "ejs");
+app.use(express.static(__dirname + "/public"));
+app.use(methodOverride("_method"));
+app.use(flash());
 
 /**
  *  Express is initialized as app so all the app() functions are available for use
@@ -19,15 +37,20 @@ var app = express();
 //Example:
 
 // When a user visits the homepage send the Welcome Text
-app.get('/', function(request, response) {
-    response.send('Hello! Welcome to ProjectZone')
+
+app.get("/", function(req, res){
+    res.render("index");
+});
+
+
+app.get('/register', function(req, res) {
+    res.render('register');
 })
 
-// When a user visits /about/<yourname> send a reply with 'your name'
-app.get('/about/:name', function(request, response) {
-    var myName = request.params.name;
-    response.send('Hi, My name is ' + myName.toUpperCase());
+app.get('/signin', function(req, res) {
+    res.render('signin');
 })
+
 
 //Setup the port for the server to listen on ==> port 3000
 const PORT = 3000;
