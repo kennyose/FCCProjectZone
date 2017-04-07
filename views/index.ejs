@@ -1,0 +1,41 @@
+<% include partials/header %>
+
+<div id = "indexbody">
+    <h1>Hospital.ng</h1>
+
+   
+<!--search bar-->
+
+<div class="container align-middle" id="center_content">
+    <div class="row">    
+        <div class="col-xs-8 col-xs-offset-2">
+            <div class="input-group">
+                <div class="input-group-btn search-panel">
+                
+
+                    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">filter by
+                        <select class="selectpicker">
+                              <option>Hospitals</option>
+                              <option>Laboratories</option>
+                              <option>Clinics</option>
+                              <option>Pharmacies</option>
+                        </select>
+                    </button>
+                </div>
+                <input type="hidden" name="search_param" value="all" id="search_param">         
+                <input type="text" class="form-control" name="search" placeholder="Search term...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <footer id="project">
+        <p>this is an FCC <span class="fcc"><i class="fa fa-free-code-camp" aria-hidden="true"></i></span> Abuja project...</p>
+    </footer>
+</div>
+        <!--search bar ends here-->
+
+    
+
+<% include partials/footer %>
