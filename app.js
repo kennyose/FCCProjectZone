@@ -33,6 +33,9 @@ var commentRoutes    = require("./routes/comments"),
     hospitalRoutes = require("./routes/hospitals"),
     indexRoutes      = require("./routes/index")
 
+// Call JS Promise method on mongose
+mongoose.Promise = global.Promise;
+
 //Connecting to Database
 
 //1 This will connect locally to your system
